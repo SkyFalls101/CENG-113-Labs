@@ -1,0 +1,16 @@
+print("Hello CENG113." , "This is the first lab section.")
+
+print(3+5) #addition
+print(3-5) #subtraction
+print(3*5) #multiplication
+print(8/2) #float division
+print(8//2) #integer division
+print(2**3) #exponents
+
+x = 3
+y = 8
+z = 2
+print("The result of (3+8)*2 is :" , (x+y)*z)
+
+#can also use concatenation with new line (\n)
+print("The result of (3+8)*2 is : " + "\n22")
