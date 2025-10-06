@@ -14,3 +14,20 @@ print("The result of (3+8)*2 is :" , (x+y)*z)
 
 #can also use concatenation with new line (\n)
 print("The result of (3+8)*2 is : " + "\n22")
+
+x = 12.5
+
+print("x=", int(x+5)) #conversion to integer
+
+print("x = " + str(x)) #conversion to string
+
+T = x + y + z
+#define the variable (or the result of the equation) in the beginning for python, unlike maths
+
+student = input("What is your name? : ")
+print("The student is :" , student)
+
+studentAge = input("How old are you? : ")
+print("Student is " + studentAge + " years old.")
+#for arithmetic operations we will have to convert it into an integer before
+print("A year after the student will be :" , int(studentAge) + 1)
