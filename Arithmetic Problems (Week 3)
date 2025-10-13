@@ -1,0 +1,36 @@
+# Kinetic Energy Calculator
+
+mass = float(input("Enter mass (kg): "))
+velocity = float(input("Enter velocity (m/s): "))
+energy = (0.5) * (mass) * (velocity ** 2)
+k_Energy = energy/1000
+print("Energy (J):" , energy)
+print(f"Energy (kJ): {k_Energy:.2f}")
+
+# Tracing Variable Reassignment
+
+first = 12
+print("The first value is: " , first, "with datatype: " , type(first))
+
+second = 5
+third = 20
+
+print("The second value is: " , second, "with datatype: " , type(second))
+print("The third value is: " , third, "with datatype: " , type(third))
+
+# made a temporary variable temp to swap the values of second and third
+temp = third
+third = second
+second = temp
+
+print("The second value after swap is: " , second, "with datatype: " , type(second))
+print("The third value after swap is: " , third, "with datatype: " , type(third))
+
+first = first/third
+print("The first value after reassignment is: " , first, "with datatype: " , type(first))
+
+second = second/first
+print("The second value after reassignment is: " , second, "with datatype: " , type(second))
+
+third = int(second//first)
+print("The third value after reassignment is: " , third, "with datatype: " , type(third))
