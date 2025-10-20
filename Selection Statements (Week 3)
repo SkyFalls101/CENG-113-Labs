@@ -1,0 +1,130 @@
+print("Juice Machine : ")
+
+name = input("Enter customer name: ")
+
+fruit = input("Please enter a fruit that you would like to choose (the first letter of the fruit must be capital such as 'Apple'): ")
+
+if fruit == "Apple" or fruit == "Orange" or fruit == "Mango" or fruit == "Carrot" or fruit == "Pomegranate":
+      fruit = fruit
+else:
+      print("Incorrect fruit selection")
+      exit()
+
+smallApple = 12
+mediumApple = 15
+largeApple = 18
+
+smallOrange = 13
+mediumOrange = 16
+largeOrange = 19
+
+smallMango = 15
+mediumMango = 19
+largeMango = 23
+
+smallCarrot = 11
+mediumCarrot = 14
+largeCarrot = 17
+
+smallPomegranate = 17
+mediumPomegranate = 21
+largePomegranate = 25
+
+size = ""
+
+sizeselection = input("What size would you like for your drink ('Small'/'Medium'/'Large'): ")
+if sizeselection == "Small":
+      size = "small"
+elif sizeselection == "Medium":
+      size = "medium"
+elif sizeselection == "Large":
+      size = "large"
+else: 
+      print("Incorrect choice!")
+      exit()
+
+
+sugar = False
+
+sugarselection = input("Would you like to add some extra sugar('Yes'/'No'): ")
+if sugarselection == "Yes":
+      sugar = True
+elif sugarselection == "No":
+      sugar == False
+else:
+      print("Incorrect choice!")  
+      exit()
+
+ice = False
+
+iceselection = input("Would you like to have some ice('Yes'/'No'): ")
+if iceselection == "Yes":
+      ice = True
+elif iceselection == "No":
+      ice == False
+else:
+      print("Incorrect choice!")  
+      exit()
+
+finalprice = 0
+
+if size == "small":
+      if fruit == "Apple":
+            finalprice = smallApple
+      elif fruit == "Orange":
+            finalprice = smallOrange
+      elif fruit == "Mango":
+            finalprice = smallMango
+      elif fruit == "Carrot":
+            finalprice = smallCarrot
+      elif fruit == "Pomegranate":
+            finalprice = smallPomegranate
+elif size == "medium":
+        
+      if fruit == "Apple":
+            finalprice = mediumApple
+      elif fruit == "Orange":
+            finalprice = mediumOrange
+      elif fruit == "Mango":
+            finalprice = mediumMango
+      elif fruit == "Carrot":
+            finalprice = mediumCarrot
+      elif fruit == "Pomegranate":
+            finalprice = mediumPomegranate
+else:
+    if fruit == "Apple":
+            finalprice = largeApple
+    elif fruit == "Orange":
+            finalprice = largeOrange
+    elif fruit == "Mango":
+            finalprice = largeMango
+    elif fruit == "Carrot":
+            finalprice = largeCarrot
+    elif fruit == "Pomegranate":
+            finalprice = largePomegranate
+
+if sugar == True:
+    if fruit == "Mango":
+        finalprice = finalprice + 2
+    else:
+        finalprice = finalprice + 1.5
+
+if ice == False:
+      if fruit == "Carrot" or ice == "Pomegranate":
+            finalprice = finalprice - 1
+else:
+      if fruit == "Mango":
+            finalprice = finalprice + 0.5
+
+
+if fruit == "Orange" and (ice == False or sugar == True):
+      finalprice = finalprice - 0.75
+
+if fruit == "Apple" and (ice == True and sugar == True):
+      finalprice = finalprice + 1.25
+
+if name == "Alex" and fruit == "Orange" and size == "medium" and sugar == True and ice == False:
+      print("Special Drink Selected, Passion Fruit!")
+      finalprice = 0
+
+print("Your final price:" , finalprice)
