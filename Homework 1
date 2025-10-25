@@ -13,6 +13,7 @@ while name.isalpha() == False:
 print(f"Hello {name}, welcome to FreshlySqueezed Juice Machine: The Sequel!")
 
 orderRepeat = True
+largeOrder = False
 
 while orderRepeat == True:
 
@@ -30,9 +31,12 @@ while orderRepeat == True:
                   fruit != "watermelon" and fruit != "date" and fruit != "limeade":
             
                   if fruit == "blueberry" and (name == "alex" or name == "Alex"):
-                        break
+                        if largeOrder == True:
+                              break
+                        else:
+                              fruit = input("Please order a drink before the blueberry one alex, we need it to be a large order first :) : ")
 
-                  if fruit == "mango":
+                  if fruit != "blueberry" and fruit == "mango":
                         print("That drink is no longer served, we are so sorry for ever serving such a horrible drink :,) ")
                         fruit = input("Please select a drink that we would actually like serving.. : ")
                   else:
@@ -343,6 +347,7 @@ while orderRepeat == True:
 
                   if repeatChoice == "yes":
                         orderRepeat = True
+                        largeOrder = True
                   else:
                         orderRepeat = False
             else:
