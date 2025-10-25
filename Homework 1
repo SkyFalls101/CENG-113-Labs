@@ -16,7 +16,7 @@ while orderRepeat == True:
       if  fruit != "Apple" and fruit != "Orange" and fruit != "Grape" and fruit != "Carrot" and fruit != "Pomegranate" and \
       fruit != "Watermelon" and fruit != "Date" and fruit != "Limeade":
             
-            if fruit == "Blueberry" and (name != "Alex" and name != "alex"):
+            if fruit != "Blueberry" and (name != "Alex" and name != "alex"):
 
 
                   while fruit != "Apple" and fruit != "Orange" and fruit != "Grape" and fruit != "Carrot" and fruit != "Pomegranate" and \
