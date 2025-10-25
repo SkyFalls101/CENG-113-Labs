@@ -1,0 +1,328 @@
+# I have added input validation on each input taken from the user to maintain consistency in the output value
+# instead of using the exit() function, which would just end the program without a final ouput
+
+finalprice = 0
+
+name = input("Please enter your beautiful name : ")
+
+print(f"Hello {name}, welcome to FreshlySqueezed Juice Machine: The Sequel!")
+
+orderRepeat = True
+
+while orderRepeat == True:
+
+      fruit = input("Please enter a fruit that you would like to choose (the first letter of the fruit must be capital such as 'Apple'): ")
+
+      if  fruit != "Apple" and fruit != "Orange" and fruit != "Grape" and fruit != "Carrot" and fruit != "Pomegranate" and \
+      fruit != "Watermelon" and fruit != "Date" and fruit != "Limeade":
+            
+            if fruit == "Blueberry" and (name != "Alex" and name != "alex"):
+
+
+                  while fruit != "Apple" and fruit != "Orange" and fruit != "Grape" and fruit != "Carrot" and fruit != "Pomegranate" and \
+                        fruit != "Watermelon" and fruit != "Date" and fruit != "Limeade":
+            
+                        if fruit == "Mango":
+                              print("That drink is no longer served, we are so sorry for ever serving such a horrible drink :,) ")
+                              fruit = input("Please select a drink that we would actually like serving.. : ")
+                        else:
+                              fruit = input("Was that a typo? Incorrect choice! Please try again :) : ")      
+
+      if fruit == "Limeade":
+            print("Ooh nice choice, choosing the only product that isn't a juice, you sure are one unique indivisual")
+
+      smallApple = 12
+      mediumApple = 15
+      largeApple = 18
+      hugeApple = 20
+      enormousApple = 24
+      giganticApple = 28
+
+      smallOrange = 13
+      mediumOrange = 16
+      largeOrange = 19
+      hugeOrange = 22
+      enormousOrange = 25
+      giganticOrange = 30
+
+      smallGrape = 15
+      mediumGrape = 19
+      largeGrape = 23
+      hugeGrape = 27
+      enormousGrape = 31
+      giganticGrape = 33
+
+      smallCarrot = 11
+      mediumCarrot = 14
+      largeCarrot = 17
+      hugeCarrot = 19
+      enormousCarrot = 22
+      giganticCarrot = 25
+
+      smallPomegranate = 17
+      mediumPomegranate = 21
+      largePomegranate = 25
+      hugePomegranate = 30
+      enormousPomegranate = 36
+      giganticPomegranate = 39
+
+      smallWatermelon = 15
+      mediumWatermelon = 17
+      largeWatermelon = 20
+      hugeWatermelon = 22
+      enormousWatermelon = 25
+      giganticWatermelon = 28
+
+      smallDate = 12
+      mediumDate = 15
+      largeDate = 19
+      hugeDate = 21
+      enormousDate = 23
+      giganticDate = 25
+
+      smallLimeade = 10
+      mediumLimeade = 12
+      largeLimeade = 14
+      hugeLimeade = 18
+      enormousLimeade = 20
+      giganticLimeade = 22
+
+      #i have no clue what to set the prices as for the drinks hocam, i just started putting random digits at the end :)
+
+      size = ""
+
+      sizeselection = input("What size would you like for your drink ('Small'/'Medium'/'Large'/'Huge'/'Enormous'/'Gigantic'): ")
+      if sizeselection == "Small":
+            size = "small"
+      elif sizeselection == "Medium":
+            size = "medium"
+      elif sizeselection == "Large":
+            size = "large"
+      elif sizeselection == "Huge":
+            size = "huge"
+      elif sizeselection == "Enormous":
+            size = "enormous"
+      elif sizeselection == "Gigantic":
+            size = "gigantic"
+      else: 
+            while sizeselection != "Small" and sizeselection != "Medium" and sizeselection != "Large" and \
+                  sizeselection != "Huge" and sizeselection != "Enormous" and sizeselection != "Gigantic":
+
+                  sizeselection = input("Incorrect size selection, maybe choose the bigger ones this time :D : ")
+
+      ice = False
+
+      iceselection = input("Would you like to have some extra ice? We promise you that it will only cost $1 extra ('Yes'/'No'): ")
+      if iceselection == "Yes":
+            ice = True
+      elif iceselection == "No":
+            ice == False
+      else:
+            while iceselection != "Yes" and iceselection != "No":
+                  iceselection = input("It was a pretty simple choice *sigh* please enter the answer again : ")
+
+      sugar = False
+
+      sugarselection = input("Should I also add some of that extra unhealthy sugar that you are certainly craving? ('Yes'/'No'): ")
+      if sugarselection == "Yes":
+            sugar = True
+      elif sugarselection == "No":
+            sugar == False
+      else:
+            while sugarselection != "Yes" and sugarselection != "No":
+                  sugarselection = input("Just a simple answer will work, all you have to do is type it correctly again : ")
+
+
+      if size == "small":
+
+            if fruit == "Apple":
+                  finalprice += smallApple
+            elif fruit == "Orange":
+                  finalprice += smallOrange
+            elif fruit == "Grape":
+                  finalprice += smallGrape
+            elif fruit == "Carrot":
+                  finalprice += smallCarrot
+            elif fruit == "Pomegranate":
+                  finalprice += smallPomegranate
+            elif fruit == "Watermelon":
+                  finalprice += smallWatermelon
+            elif fruit == "Date":
+                  finalprice += smallDate
+            elif fruit == "Limeade":
+                  finalprice += smallLimeade
+
+      elif size == "medium":
+            
+            if fruit == "Apple":
+                  finalprice += mediumApple
+            elif fruit == "Orange":
+                  finalprice += mediumOrange
+            elif fruit == "Grape":
+                  finalprice += mediumGrape
+            elif fruit == "Carrot":
+                  finalprice += mediumCarrot
+            elif fruit == "Pomegranate":
+                  finalprice += mediumPomegranate
+            elif fruit == "Watermelon":
+                  finalprice += mediumWatermelon
+            elif fruit == "Date":
+                  finalprice += mediumDate
+            elif fruit == "Limeade":
+                  finalprice += mediumLimeade
+
+      elif size == "large":
+
+            if fruit == "Apple":
+                  finalprice += largeApple
+            elif fruit == "Orange":
+                  finalprice += largeOrange
+            elif fruit == "Grape":
+                  finalprice += largeGrape
+            elif fruit == "Carrot":
+                  finalprice += largeCarrot
+            elif fruit == "Pomegranate":
+                  finalprice += largePomegranate
+            elif fruit == "Watermelon":
+                  finalprice += largeWatermelon
+            elif fruit == "Date":
+                  finalprice += largeDate
+            elif fruit == "Limeade":
+                  finalprice += largeLimeade
+
+      elif size == "Huge":
+
+            if fruit == "Apple":
+                  finalprice += hugeApple
+            elif fruit == "Orange":
+                  finalprice += hugeOrange
+            elif fruit == "Grape":
+                  finalprice += hugeGrape
+            elif fruit == "Carrot":
+                  finalprice += hugeCarrot
+            elif fruit == "Pomegranate":
+                  finalprice += hugePomegranate
+            elif fruit == "Watermelon":
+                  finalprice += hugeWatermelon
+            elif fruit == "Date":
+                  finalprice += hugeDate
+            elif fruit == "Limeade":
+                  finalprice += hugeLimeade
+
+      elif size == "enormous":
+
+            if fruit == "Apple":
+                  finalprice += enormousApple
+            elif fruit == "Orange":
+                  finalprice += enormousOrange
+            elif fruit == "Grape":
+                  finalprice += enormousGrape
+            elif fruit == "Carrot":
+                  finalprice += enormousCarrot
+            elif fruit == "Pomegranate":
+                  finalprice += enormousPomegranate
+            elif fruit == "Watermelon":
+                  finalprice += enormousWatermelon
+            elif fruit == "Date":
+                  finalprice += enormousDate
+            elif fruit == "Limeade":
+                  finalprice += enormousLimeade
+
+      else:
+
+            if fruit == "Apple":
+                  finalprice += giganticApple
+            elif fruit == "Orange":
+                  finalprice += giganticOrange
+            elif fruit == "Grape":
+                  finalprice += giganticGrape
+            elif fruit == "Carrot":
+                  finalprice += giganticCarrot
+            elif fruit == "Pomegranate":
+                  finalprice += giganticPomegranate
+            elif fruit == "Watermelon":
+                  finalprice += giganticWatermelon
+            elif fruit == "Date":
+                  finalprice += giganticDate
+            elif fruit == "Limeade":
+                  finalprice += giganticLimeade
+
+      hasVowel = False
+      firstVowel = False
+      index = 0
+
+      for x in fruit:
+            
+            x = x.lower()
+            index += 1
+            
+            if x == "a" or x == "e" or x == "i" or \
+            x == "o" or x == "u":
+                  if index == 1:
+                        firstVowel = True
+                  hasVowel = True
+
+
+      if fruit != "Blueberry" and ice == True:
+            if size == "large" and hasVowel == True:
+                  print("Unfortunately, inflation has taken over your drink, the extra ice is actually $2 for your specific drink choice :(")
+                  finalprice += 4
+            elif size == "medium" and firstVowel == True:
+                  print("Good news! Just for your amazing selection, you get a small discount, the extra ice will only be $0.5!")
+                  finalprice += 1.5
+            elif fruit != "Limeade":
+                        finalprice += 2
+
+      if fruit != "Blueberry" and sugar == True:
+            # after some google searching i got to know that only date has more than 19g of sugar per 100g
+            # also the size of the drink does not matter since the concentration of the drink remains the same 
+            # so i'll take these assumptions and code the rest according to this ¯\_(ツ)_/¯
+            
+            if fruit == "Date":
+                  finalprice += 5
+            else:
+                  finalprice += 0.3            
+
+      if (name == "Alex" or name == "alex") and fruit == "Blueberry" and size == "gigantic" and sugar == True and ice == False:
+            print("Here's your special drink Alex ;)")
+            finalprice += 0
+
+      if fruit != "Blueberry" and sugar == True and ice == True:
+            print(f"Here is your {size} {fruit} drink with extra sugar and ice {name}.")
+      elif fruit != "Blueberry" and sugar == False and ice == True:
+            print(f"Here is your {size} {fruit} drink without extra sugar and extra ice {name}.")
+      elif fruit != "Blueberry" and sugar == False and ice == False:
+            print(f"Here is your {size} {fruit} drink without extra sugar or ice {name}.")
+      elif fruit != "Blueberry" and sugar == True and ice == False:
+            print(f"Here is your {size} {fruit} drink with extra sugar but without extra ice {name}.")
+      
+      repeatChoice = input("Would you like to order another drink? ('Yes'/'No') ")
+
+      while repeatChoice != "Yes" and repeatChoice != "No":
+            print("Please type it correctly this time : ")
+            repeatChoice = input("Would you like to order another drink? ('Yes'/'No') ")
+
+      if repeatChoice == "Yes":
+      
+            repeatChoice = input("Are you sure? ('Yes'/'No') ")
+            while repeatChoice != "Yes" and repeatChoice != "No":
+                  print("Please type it correctly this time : ")
+                  repeatChoice = input("Are you sure? ('Yes'/'No') ")
+                  
+            if repeatChoice == "Yes":
+            
+                  repeatChoice = input("Are you super sure? ('Yes'/'No') ")
+                  while repeatChoice != "Yes" and repeatChoice != "No":
+                        print("Please type it correctly this time : ")
+                        repeatChoice = input("Are you super sure? ('Yes'/'No') ")
+                  
+                  if repeatChoice == "Yes":
+                        orderRepeat = True
+                  else:
+                        orderRepeat = False
+            else:
+                  orderRepeat = False
+      else:
+            orderRepeat = False
+
+print(f"The total price of your order is ${finalprice}.")
