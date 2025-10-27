@@ -1,0 +1,58 @@
+# Question 1
+
+userNum = int(input("Please enter a positive integer : "))
+
+while userNum <= 0:
+    userNum = int(input("Please re-enter the value, it has to be a positive integer : "))
+
+# Question 2
+
+userNum = int(input("Please enter a positive integer to get the factorial : "))
+
+while userNum < 0:
+    userNum = int(input("Please re-enter the value, it has to be a positive integer : "))
+
+sum = userNum
+
+for x in range(userNum-1, 1, -1):
+    sum *= x
+
+print("The factorial of your number is :", sum)
+
+# Question 3
+
+userNum = int(input("Please enter a positive integer to get the sum  of its digits : "))
+
+while userNum < 0:
+    userNum = int(input("Please re-enter the value, it has to be a positive integer : "))
+
+sum = 0
+
+userNum = str(userNum)
+
+for x in userNum:
+    sum += int(x)
+
+print("The sum of the digits of your number is :" , sum)
+
+#   Question 4
+
+import random
+
+secretNum = random.randint(1, 25)
+
+found = False
+
+while found == False:
+    userNum = int(input("Please enter a number between 1 and 25 that you would like to guess : "))
+
+    while userNum < 1 or userNum > 25:
+        userNum = int(input("Please re-enter the value, it has to be between 1 and 25 : "))
+
+    if userNum == secretNum:
+        print("Congratulations")
+        found = True
+    elif userNum > secretNum:
+        print("Too High! Try again.")
+    else:
+        print("Too low! Try again.")
