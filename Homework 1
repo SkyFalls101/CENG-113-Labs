@@ -35,13 +35,14 @@ while orderRepeat == True:
                               break
                         else:
                               fruit = input("Please order a drink before the blueberry one alex, we need it to be a large order first :) : ")
-
-                  if fruit != "blueberry" and fruit == "mango":
-                        print("That drink is no longer served, we are so sorry for ever serving such a horrible drink :,) ")
-                        fruit = input("Please select a drink that we would actually like serving.. : ")
                   else:
-                        fruit = input("Was that a typo? Incorrect choice! Please try again :) : ")
-                        fruit = fruit.lower()
+
+                        if fruit != "blueberry" and fruit == "mango":
+                              print("That drink is no longer served, we are so sorry for ever serving such a horrible drink :,) ")
+                              fruit = input("Please select a drink that we would actually like serving.. : ")
+                        else:
+                              fruit = input("Was that a typo? Incorrect choice! Please try again :) : ")
+                              fruit = fruit.lower()
 
       if fruit == "limeade":
             print("Ooh nice choice, choosing the only product that isn't a juice, you sure are one unique indivisual")
