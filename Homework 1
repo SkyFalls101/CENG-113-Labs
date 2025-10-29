@@ -290,6 +290,7 @@ while orderRepeat == True:
 
 
       if fruit != "blueberry" and ice == True:
+
             if size == "large" and hasVowel == True:
                   print("Unfortunately, inflation has taken over your drink, the extra ice is actually $2 for your specific drink choice :(")
                   finalprice += 4
@@ -361,4 +362,4 @@ while orderRepeat == True:
       else:
             orderRepeat = False
 
-print(f"The total price of your order is ${finalprice}.")
+print(f"The total price of your order is ${round(finalprice, 1)}.")
