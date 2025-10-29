@@ -110,6 +110,12 @@ while orderRepeat == True:
 
       sizeselection = sizeselection.lower()
 
+      while sizeselection != "small" and sizeselection != "medium" and sizeselection != "large" and \
+            sizeselection != "huge" and sizeselection != "enormous" and sizeselection != "gigantic":
+
+            sizeselection = input("Incorrect size selection, maybe choose the bigger ones this time :D : ")
+            sizeselection = sizeselection.lower()
+
       if sizeselection == "small":
             size = "small"
       elif sizeselection == "medium":
@@ -122,12 +128,6 @@ while orderRepeat == True:
             size = "enormous"
       elif sizeselection == "gigantic":
             size = "gigantic"
-      else: 
-            while sizeselection != "small" and sizeselection != "medium" and sizeselection != "large" and \
-                  sizeselection != "huge" and sizeselection != "enormous" and sizeselection != "gigantic":
-
-                  sizeselection = input("Incorrect size selection, maybe choose the bigger ones this time :D : ")
-                  sizeselection = sizeselection.lower()
 
       ice = False
 
