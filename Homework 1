@@ -275,16 +275,12 @@ while orderRepeat == True:
                   finalprice += giganticLimeade
 
       firstVowel = False
-      index = 0
 
-      for x in fruit:
-            
-            index += 1
-            
-            if x == "a" or x == "e" or x == "i" or \
-            x == "o" or x == "u":
-                  if index == 1:
-                        firstVowel = True
+      x = fruit[0]
+        
+      if x == "a" or x == "e" or x == "i" or \
+      x == "o" or x == "u":
+            firstVowel = True
                   
 
 
