@@ -274,7 +274,6 @@ while orderRepeat == True:
             elif fruit == "limeade":
                   finalprice += giganticLimeade
 
-      hasVowel = False
       firstVowel = False
       index = 0
 
@@ -286,19 +285,20 @@ while orderRepeat == True:
             x == "o" or x == "u":
                   if index == 1:
                         firstVowel = True
-                  hasVowel = True
+                  
 
 
       if fruit != "blueberry" and ice == True:
-
-            if size == "large" and hasVowel == True:
+            if size == "large" and firstVowel == True:
                   print("Unfortunately, inflation has taken over your drink, the extra ice is actually $2 for your specific drink choice :(")
                   finalprice += 4
             elif size == "medium" and firstVowel == True:
                   print("Good news! Just for your amazing selection, you get a small discount, the extra ice will only be $0.5!")
                   finalprice += 1.5
-            elif fruit != "limeade":
-                        finalprice += 2
+            elif fruit == "limeade":
+                  print("luckily for you, we don't charge for ice on non-juice drinks!")
+            else:
+                  finalprice += 2
 
       if fruit != "blueberry" and sugar == True:
             # after some google searching i got to know that only date has more than 19g of sugar per 100g
