@@ -1,0 +1,15 @@
+#LAB RECITATION :
+
+#print, arithmetic, variables
+
+#Immediate values (hard coded values into a variable)
+
+#type() function returns the datatype of the argument (can be variable or written directly)
+
+#if cond. (= : assignment, == : checking if two values are equal, this returns a boolean)
+
+#loops; for-loops (consisting of different type of range functions), and while-loops 
+
+#range in for-loops are non-inclusive functions where the end-range number is never executed 
+
+#discussed infinite loops aka dangerous loops
