@@ -1,0 +1,78 @@
+def banner(title: str):
+    print("=" * 50)
+    print(f"{title:^50}")
+    print("=" * 50)
+    
+def welcome_customer(name):
+    if name == "":
+        return "Welcome guest! What would you like to drink today?"
+    else:
+        return f"Welcome {name}! What would you like to drink today?"
+    
+def foam_bubbles_recursive(n):
+    if n == 1:
+        return 1
+        
+    return n * foam_bubbles_recursive(n-1)
+
+def coffee_price(size, extra_shot, milk):
+    
+    price = 0
+    
+    size = size.lower()
+
+    if size == "small":    
+        price = 30
+    elif size == "medium":
+        price = 40
+    else:
+        price = 50
+
+    if extra_shot == "y":
+        price += 10
+    if milk == "n":
+        price -= 5
+
+    return price
+
+def order_summary(name, size, total_price):
+    print("=" * 50)
+    print(f"{name} ordered a {size} coffee | Total: {total_price} TL")
+    print("=" * 50)
+
+def total_earnings(orders):
+    
+    total = 0
+
+    for i in orders:
+        total += i
+    
+    return total
+
+banner("COFFEE MACHINE")
+
+name = input("Enter your name: ")
+welcome_customer(name)
+
+size = input("Choose size (Small / Medium / Large): ")
+extra_shot = input("Would you like an extra shot? (y/n): ")
+milk = input("Would you like milk (y/n): ")
+
+price = coffee_price(size, extra_shot, milk)
+
+order_summary(name, size, price)
+
+n = int(input("Enter a number to calculate foam bubbles: "))
+
+recursive_n = foam_bubbles_recursive(n)
+
+print("Number of foam bubbles are:", recursive_n)
+
+print("Now let's test daily earning calculation")
+
+orders = [50, 70, 40, 100]
+
+print(f"Total earnings: {total_earnings(orders)} TL")
+
+print("=" * 50)
+print("Thank you for using the Coffee Machine Simulator")
