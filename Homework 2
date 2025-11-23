@@ -1,0 +1,128 @@
+file = r"D:\IYTE\CENG Labs\treasure_log.txt"
+HP = 10
+Gold = 0
+steps = 0
+
+def read_intro_line(filename):
+    with open(filename, "r", encoding="utf-8") as file:
+        intro = file.read()
+        print(intro)
+
+def load_events_for_pack(packname):
+
+        if packname == "A":
+            
+            global steps
+            
+            # Step 1 (location: forest)
+            print("While exploring the forest, Aris notices something glimmering beneath the leaves — a few "
+                  "scattered gold coins. His gold increases by five, and his health remains the same. \n")
+            write_log_line(file, "You found 5 gold in the forest.")
+            apply_event(0, 5)
+            steps +=1
+            # Step 2 (location: river)
+            decision = decide_step2_path(HP, Gold, packname)
+            if decision == "choice 1":
+                print("Aris reaches a wide river. He must cross to the other side. If he has enough gold, he can pay a " 
+                      "ferryman two gold to cross safely. If not, he will have to swim across, losing three health points in the process. \n")
+                write_log_line(file, "You paid the ferryman 2 gold and crossed safely.")
+                apply_event(0, -2)
+                steps +=1
+            else:
+                print("Aris reaches a wide river. He must cross to the other side. If he has enough gold, he can pay a "
+                      "ferryman two gold to cross safely. If not, he will have to swim across, losing three health points in the process. \n")
+                write_log_line(file, "You tried to swim across and lost your strength. -3 HP.")
+                apply_event(-3, 0)
+                steps +=1
+            # Step 3 (location: cave)
+            print("Inside a dark cave, a hidden trap is triggered. Aris loses three health points. \n")
+            write_log_line(file, "A trap in the cave! -3 HP.")
+            apply_event(-3, 0)
+            steps +=1
+            # Step 4 (location: river)
+            print("Near the riverbank, he finds a glowing green herb. He eats it and regains two health points. \n")
+            write_log_line(file, "A healing herb by the river. +2 HP.")
+            apply_event(2, 0)
+            steps +=1
+            # Step 5 (location: desert)
+            print("In the desert, Aris chases a mirage and gets exhausted. He loses two health points. \n")
+            write_log_line(file, "A draining mirage in the desert. -2 HP")
+            apply_event(-2, 0)
+            steps +=1
+            # Step 6 (location: river)
+            print("Returning once more to the river, he discovers a sunken chest buried beneath the sand. "
+                  "Inside, he finds ten gold coins. His health remains unchanged. \n")
+            write_log_line(file, "A sunken chest in the river! +10 gold.")
+            apply_event(0, 10)
+            steps +=1
+
+        else:
+            # Step 1 (location: forest)
+            print("While walking through the forest, he is attacked by a swarm of bees. He manages to escape, "
+                  "but loses five health points. \n")
+            write_log_line(file, "Bee swarm in the forest! -5 HP")
+            apply_event(-5, 0)
+            steps +=1
+            # Step 2 (location: shelter)
+            decision = decide_step2_path(HP, Gold, packname)
+            if decision == "choice 1":
+                print("Aris feels weak and tired, and must decide whether to rest or keep going. If his health has "
+                      "dropped to five or below, he takes a rest and finds shelter, regaining one health point. \n")
+                write_log_line(file, "You found shelter and recovered. +1 HP.")
+                apply_event(1, 0)
+                steps +=1
+            else:
+                print("If he is still strong (health above five), he continues without resting but loses two health points. \n")
+                write_log_line(file, "You pressed on without resting. -2 HP.")
+                apply_event(-2, 0)
+                steps +=1
+            # Step 3 (location: cave)
+            print("Inside a cave, Aris finds some valuable ore. He gains four gold, \n")
+            write_log_line(file, "You mined ore in the cave: +4 gold.")
+            apply_event(0, 4)
+            steps +=1
+            # Step 4 (location: riverbank)
+            steps +=1
+            print("At the riverbank, he attempts to cross the fast current. Unfortunately, he is caught in a whirlpool and loses eight health points. \n")
+            write_log_line(file, "A whirlpool drags you under! -8 HP.")
+            apply_event(-8, 0)
+            
+def apply_event(dhp, dgold):
+    
+    global HP, Gold
+    
+    HP += dhp
+    Gold += dgold
+
+def decide_step2_path(HP, Gold, packname):
+    
+
+    if packname == "A":
+        if Gold >= 2:
+            Gold -= 2
+            return "choice 1"
+
+        else:
+            HP -= 3
+            return "choice 2"
+    else:
+        if HP >= 5:
+            HP += 1
+            return "choice 1"
+        else:
+            HP -= 2
+            return "choice 2"
+
+def write_log_line(file, message):
+    with open (file, "a") as filename:
+        filename.write(message + "\n")
+
+def run_pack(packname):
+    
+    read_intro_line(file)
+    load_events_for_pack(packname)
+
+    print("SUMMARY : HP =", HP, "GOLD =", Gold, "STEPS =", steps)
+
+choice = input("Please enter which pack you would like to run (A/B): ").upper()
+run_pack(choice)
