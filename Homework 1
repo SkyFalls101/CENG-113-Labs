@@ -7,8 +7,6 @@ name = input("Please enter your beautiful name : ")
 
 name = name.replace(" ", "")
 
-# test for github
-
 while name.isalpha() == False:
       name = input("I know your name doesn't have any symbols or numbers. Write your real name : ")
 
@@ -16,6 +14,7 @@ print(f"Hello {name}, welcome to FreshlySqueezed Juice Machine: The Sequel!")
 
 orderRepeat = True
 largeOrder = False
+
 
 while orderRepeat == True:
 
