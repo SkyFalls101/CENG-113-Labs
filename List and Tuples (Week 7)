@@ -1,0 +1,91 @@
+def add_movie(movie_list):
+
+    movie_id = input("Please enter a movie id: ")
+    title = input("Please enter a movie title: ")
+    duration_minutes = input("Please enter a movie duration: ")
+
+    movies_list.append([(movie_id, title, duration_minutes), []])
+
+def add_showtime(movies_list):
+
+    movie_id = input("Please enter a movie id: ")
+    showtime_id = input("Please enter a showtime id: ")
+    hall_no = input("Please enter a hall number: ")
+    capacity = input("Please enter total capacity: ")
+
+    found = False
+    index = 0
+
+    while found == False and index < len(movies_list):
+        if movies_list[index][0][0] == movie_id:
+            showtime = [showtime_id, hall_no, capacity, 0]
+            movies_list[index][1].append(showtime)
+            found = True
+        else:
+            index += 1
+
+    if found == False:
+        print("Showtime not added, movie not found")
+
+def sell_tickets(movies_list):
+
+    movie_id = input("Please enter a movie id: ")
+    showtime_id = input("Please enter a showtime id: ")
+    number_of_tickets = input("Please enter the number of tickets: ")
+
+    ticket = False
+
+    for movie in movies_list:
+        
+        if movie[0][0] == movie_id:
+
+            showtimes = movie[1]
+
+            for showtime in showtimes:
+                if showtime[0] == showtime_id:
+                    if (int(showtime[3]) + int(number_of_tickets)) <= int(showtime[2]):
+                        showtime[3] += int(number_of_tickets)
+                        ticket = True
+                    else:
+                        print("Total number of tickets exceeded")
+
+    if ticket == False:
+        print("An error occurred while purchasing your ticket.")
+
+def display_all_movies_summary(movies_list):
+    
+    for movie in movies_list:
+
+        movie_id = movie[0][0]
+        title = movie[0][1]
+        duration = movie[0][2]
+        showtime_data = movie[1]
+        
+        total_tickets_sold = 0
+
+        if showtime_data:
+            for j in showtime_data:
+                total_tickets_sold += j[3] 
+
+        print(f"Movie ID: {movie_id} | Title: {title} | Duration (minutes): {duration} | Total tickets sold: {total_tickets_sold}")
+
+
+movies_list = []
+user_choice = True
+
+while user_choice:
+    print(" 1. Add a new movie \n 2. Add a showtime to a movie \n 3. Sell tickets for a showtime" \
+    "\n 4. Display all movies with total tickets sold \n 5. Exit")
+
+    user_choice = input("Please enter your choice: ")
+    if user_choice == "5":
+        print("Exiting...")
+        break
+    elif user_choice == "1":
+        add_movie(movies_list) 
+    elif user_choice == "2":
+        add_showtime(movies_list)
+    elif user_choice == "3":
+        sell_tickets(movies_list)
+    elif user_choice == "4":
+        display_all_movies_summary(movies_list) 
