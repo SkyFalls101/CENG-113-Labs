@@ -1,0 +1,96 @@
+# Lab 8 - Chat Analyzer (More About Strings)
+
+def banner(title):
+    print("=" * 30)
+    print("\t" + title.upper())
+    print("=" * 30)
+
+
+# TASK 1: Basic message info
+def basic_info(message):    
+    string_len = len(message)
+    string_first = message[0]
+    string_last = message[-1]
+
+    return_string = f"Length: {string_len}, First: {string_first}, Last: {string_last}"
+
+    return return_string
+
+# TASK 2: Username formatting with slicing
+def format_username(username):
+
+    j = -1
+    i = 0
+    reverse_string = ""
+    while i <= len(username)-1:
+        reverse_string += username[j]
+        j -= 1
+        i+= 1
+
+    return_string = f"{username[0:2]}...{username[-2:]} ({reverse_string})"
+    return return_string
+
+
+# TASK 3: Check banned word (case-insensitive)
+def contains_banned(message, banned_word):
+
+    lower_message = message.lower()
+    lower_banned_word = banned_word.lower()
+
+    return lower_banned_word in lower_message
+
+# TASK 4: Censor message with replace and find
+def censor_message(message, banned_word):
+    
+    if contains_banned(message, banned_word) == True:
+        return message.replace(banned_word, "***")
+    else:
+        return message
+
+
+# TASK 5: Word statistics with split
+def word_stats(message, target_word):
+    word_list = message.split(" ")
+    no_of_words = len(word_list)
+    count = 0
+
+    for i in word_list:
+        i = i.rstrip("." "," "!")
+
+        if i == target_word:
+            count += 1
+
+    return f"Words: {no_of_words}, '{target_word}' appears {count} time(s)"
+
+
+def main():
+    banner("CHAT ANALYZER")
+    message = input("Enter a chat message: ")
+    username = input("Enter your username: ")
+
+    print("=====BASIC INFO=====")
+
+    print(basic_info(message))
+
+    print("=====USERNAME FORMAT=====")
+
+    print(format_username(username))
+    
+    print("=====BANNED WORD CHECK=====")
+
+    banned_word = input("Enter a banned word to check: ")
+    if contains_banned(message, banned_word):
+        print("Warning: banned word found in the message!")
+    else:
+        print("No banned word found.")
+
+    print("=====CENSORED MESSAGE=====")
+
+    print(censor_message(message, banned_word))
+
+    print("=====WORD STATS=====")
+
+    target_word = input("Enter a word to count in the message: ")
+    print(word_stats(message, target_word))
+
+main()
